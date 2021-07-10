@@ -68,7 +68,6 @@ export default {
     },
   },
   mounted() {
-    console.log("info", this.info);
     this.getPokemon();
   },
 };
