@@ -23,13 +23,14 @@ export default new Vuex.Store({
       } else {
         filter = state.pokeList.filter((poke) => poke.name.includes(pokemon));
       }
+      localStorage.setItem("pokeList", JSON.stringify(filter));
       state.filteredList = filter;
     },
   },
   actions: {
     getMultiplePokemon({ commit }) {
       let promises = [];
-      const MAX = 899; // max num of iterations that returns a pokemon... for better performance PLEASE USE ONLY 1ST GEN around (150)
+      const MAX = 150; // max num of iterations that returns a pokemon... for better performance PLEASE USE ONLY 1ST GEN around (150)
       for (let index = 1; index < MAX; index++) {
         promises.push(
           axios

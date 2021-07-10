@@ -123,8 +123,7 @@ span {
   }
 
   .secondary-info {
-    margin-top: 1vh;
-    min-width: 90%;
+    display: none;
   }
 }
 

@@ -6,7 +6,7 @@
       type="text"
       class="text-input"
       id="text-input"
-      placeholder="Search Pokemon"
+      placeholder="Search Pokemon (Only 1st Gen)"
     />
     <poke-button text="Search" :onCall="clickHandler" />
   </div>
@@ -31,6 +31,7 @@ export default {
       });
     },
   },
+  mounted() {},
 };
 </script>
 

@@ -1,15 +1,15 @@
 <template>
   <div>
     <search />
-    <div class="poke-grid" v-if="filteredList.length">
+    <div class="poke-grid">
       <poke-card
         @modalHandler="modalHandler"
-        v-for="info in filteredList"
+        v-for="info in pokeList"
         :key="info.id"
         :info="info"
       />
     </div>
-    <div v-else>
+    <div v-if="!pokeList.length">
       <h1>No results found... Try typing 'em all</h1>
     </div>
     <Modal
@@ -25,6 +25,7 @@ import { mapState } from "vuex";
 
 export default {
   data: () => ({
+    pokeList: JSON.parse(localStorage.getItem("pokeList")),
     chosenPokemon: {},
     showModal: false,
   }),
@@ -44,6 +45,13 @@ export default {
 
   computed: {
     ...mapState(["filteredList"]),
+  },
+
+  watch: {
+    filteredList(newPokeList) {
+      this.pokeList = newPokeList;
+      localStorage.setItem("pokeList", JSON.stringify(newPokeList));
+    },
   },
 };
 </script>

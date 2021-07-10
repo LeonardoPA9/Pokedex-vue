@@ -21,6 +21,7 @@ const routes = [
     component: () => import("@/views/PokemonSearch.vue"),
     children: [
       {
+        name: "detail",
         path: "",
         component: () => import("@/components/Search/SearchWrapper.vue"),
       },

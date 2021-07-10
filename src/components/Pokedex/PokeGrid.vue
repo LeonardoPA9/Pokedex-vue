@@ -21,7 +21,7 @@
         text="Back"
       />
       <poke-button
-        :disabled="paginator.offset === 1104"
+        :disabled="paginator.offset === 144"
         :onCall="giveStep"
         text="MORE"
       />
